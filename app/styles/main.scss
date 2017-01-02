@@ -174,3 +174,16 @@ body {
   }
 }
 
+.product-info {
+  margin-top: 10px;
+
+  .price-tag {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .rates {
+    line-height: 20px;
+    color: #1daaa3;
+  }
+}
