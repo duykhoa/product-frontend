@@ -1,10 +1,9 @@
 <div class="row">
-  <div class="product-grid col-md-3">
-
-    <div class="product-wrapper">
+  <div class="product-grid col-md-3" ng-repeat="product in products">
+    <div class="product-wraper">
       <div class="product-image">
         <a href="">
-          <img src="http://demo.xtemos.com/basel/wp-content/uploads/2015/10/accessories-21-263x336.jpg">
+          <img ng-src="{{product.images[0].url}}">
         </a>
       </div>
 
@@ -31,7 +30,7 @@
 
     <div class="row product-info">
       <div class="col-md-6 price-tag">
-        <strong>S$ 150</strong>
+        <strong>S${{product.price}}</strong>
       </div>
 
       <div class="col-md-6 rates text-right">
@@ -42,7 +41,7 @@
       </div>
 
       <div class="col-md-12">
-        <h5>Iphone 7 Cover</h5>
+        <h5>{{product.name}}</h5>
       </div>
     </div>
   </div>

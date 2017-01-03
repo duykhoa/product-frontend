@@ -38,7 +38,7 @@ angular
     $urlRouterProvider.otherwise('/main');
 
     // Config Restangular
-    RestangularProvider.setBaseUrl('/api/');
+    RestangularProvider.setBaseUrl('http://localhost:3000/');
   })
   .run(function () {
     console.log('run');

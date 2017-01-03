@@ -9,9 +9,8 @@
  */
 angular.module('productFrontendApp')
   .controller('MainCtrl', function ($scope, Restangular) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    Restangular.all('products').getList()
+    .then(function(products) {
+      $scope.products = products;
+    });
   });
