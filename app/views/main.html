@@ -15,7 +15,7 @@
 
       <div class="actions">
         <div class="action edit">
-          <a href="#">
+          <a href="#" data-toggle="modal" data-target="#editModal{{product.id}}">
             <i class="glyphicon glyphicon-edit"></i>
           </a>
         </div>
@@ -42,6 +42,24 @@
 
       <div class="col-md-12">
         <h5>{{product.name}}</h5>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editModal{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
