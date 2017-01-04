@@ -23,6 +23,7 @@ angular
     $urlRouterProvider,
     RestangularProvider
   ) {
+
     $stateProvider
       .state('main', {
         url: '/main',
