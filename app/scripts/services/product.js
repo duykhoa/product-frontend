@@ -37,6 +37,11 @@ angular.module('productFrontendApp')
 
        var services = Restangular.one("products", product.id);
        return services.customPOST(data);
+      },
+
+      deleteProduct: function(product) {
+       var services = Restangular.one("products", product.id);
+       return services.customDELETE();
       }
     };
   });

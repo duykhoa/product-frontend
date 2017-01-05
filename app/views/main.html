@@ -21,7 +21,7 @@
         </div>
 
         <div class="action remove">
-          <a href="#">
+          <a href="" data-toggle="modal" ng-click="deleteModal(product)">
             <i class="glyphicon glyphicon-trash"></i>
           </a>
         </div>
@@ -120,7 +120,7 @@
 
                 <div class="form-group">
                   <label for="">Price</label>
-                  <input type="value" ng-model="newProduct.price" class="form-control" value='{{newProduct.price}}'></input>
+                  <input type="text" ng-model="newProduct.price" class="form-control" value='{{newProduct.price}}'></input>
                 </div>
               </div>
             </div>
@@ -186,6 +186,32 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete Product {{deletedProduct.name}}</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            You are gonna to delete
+            <strong>{{deleteProduct.name}}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" ng-click="deleteProduct(deletedProduct)">Delete</button>
+      </div>
+
     </div>
   </div>
 </div>

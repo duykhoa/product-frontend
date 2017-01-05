@@ -49,4 +49,23 @@ angular.module('productFrontendApp')
 
       $("#showModal").modal("show");
     }
+
+    $scope.deleteModal = function(product) {
+      $scope.deletedProduct = product;
+      $("#deleteModal").modal("show");
+    }
+
+    $scope.deleteProduct = function(product) {
+      ProductService
+        .deleteProduct(product)
+        .then(function(resp){
+          var index = $scope.products.indexOf(product);
+
+          if (index > -1) {
+            $scope.products.splice(index, 1);
+          }
+
+          $("#deleteModal").modal('hide');
+        })
+    }
   });
