@@ -8,7 +8,7 @@
  * Controller of the productFrontendApp
  */
 angular.module('productFrontendApp')
-  .controller('MainCtrl', function ($scope, Restangular, ProductService) {
+  .controller('MainCtrl', function ($scope, $timeout, Restangular, ProductService) {
     Restangular.all('products').getList()
     .then(function(products) {
       $scope.products = products;
@@ -37,5 +37,16 @@ angular.module('productFrontendApp')
         $("#newModal").modal('hide');
         $scope.products.push(product);
       })
+    }
+
+    $scope.productInfo = function(product) {
+      $scope.viewProduct = product.clone();
+      $scope.viewProduct.images = [];
+
+      $timeout(function(){
+        $scope.viewProduct.images = product.images;
+      })
+
+      $("#showModal").modal("show");
     }
   });

@@ -8,7 +8,7 @@
       </div>
 
       <div class="quickview">
-        <a href="">
+        <a href="" data-toggle="modal" ng-click='productInfo(product)'>
           <i class="glyphicon glyphicon-zoom-in"></i>
         </a>
       </div>
@@ -132,6 +132,60 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Product {{viewProduct.name}}</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+          <div class='col-md-12'>
+
+            <div class="carousel-wrapper" ng-if="viewProduct.images.length > 0">
+              <!--- start carousel -->
+              <div id="image-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active" ng-repeat="image in viewProduct.images">
+                    <img ng-src="{{image.url}}">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" ng-if="viewProduct.images.length > 1">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" ng-if="viewProduct.images.length > 1">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+              <!--- end carousel -->
+            </div>
+
+          </div>
+
+          <div class="col-md-12">
+            <h3>{{viewProduct.name}}</h3>
+            <div>
+              <i>Price:</i> <strong>S${{viewProduct.price}}</strong>
+            </div>
+
+            <div><i>Info:</i> {{viewProduct.description}}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
