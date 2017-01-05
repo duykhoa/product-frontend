@@ -15,7 +15,7 @@
 
       <div class="actions">
         <div class="action edit">
-          <a href="#" data-toggle="modal" data-target="#editModal{{product.id}}">
+          <a href="" data-toggle="modal" ng-click="showEditModal(product)">
             <i class="glyphicon glyphicon-edit"></i>
           </a>
         </div>
@@ -45,46 +45,46 @@
       </div>
     </div>
 
-    <div class="modal fade" id="editModal{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Edit Product {{product.name}}</h4>
-          </div>
+  </div>
+</div>
 
-          <form ng-submit="submitProduct(product)">
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="">Name</label>
-                      <input type="text" ng-model="product.name" class="form-control" value='{{product.name}}'></input>
-                    </div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Product {{editProduct.name}}</h4>
+      </div>
 
-                    <div class="form-group">
-                      <label for="">Description</label>
-                      <textarea ng-model="product.description" class="form-control">{{product.description}}</textarea>
-                    </div>
+      <form ng-submit="submitProduct(editProduct)">
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Name</label>
+                  <input type="text" ng-model="editProduct.name" class="form-control" value='{{editProduct.name}}'></input>
+                </div>
 
-                    <div class="form-group">
-                      <label for="">Price</label>
-                      <input type="value" ng-model="product.price" class="form-control" value='{{product.price}}'></input>
-                    </div>
-                  </div>
+                <div class="form-group">
+                  <label for="">Description</label>
+                  <textarea ng-model="editProduct.description" class="form-control">{{editProduct.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="">Price</label>
+                  <input type="value" ng-model="editProduct.price" class="form-control" value='{{editProduct.price}}'></input>
                 </div>
               </div>
             </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

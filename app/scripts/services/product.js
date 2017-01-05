@@ -9,11 +9,20 @@
  */
 angular.module('productFrontendApp')
   .factory('ProductService', function (Restangular) {
-    var service = Restangular.all('products').getList();
-
     return {
-      updateProduct: function (id, data) {
-        service.one(id).put({data: data});
+      updateProduct: function (product) {
+        var data = {
+          product: {
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            product_images_attributes: [
+            ]
+          }
+        };
+
+       var services = Restangular.one("products", product.id);
+       return services.customPUT(data);
       }
     };
   });
