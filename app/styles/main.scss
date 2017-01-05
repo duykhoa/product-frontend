@@ -120,6 +120,15 @@ body {
   position: relative;
   background-color: #eee;
 
+  @media screen and(max-width: 992px) {
+    max-height: 500px;
+
+    img {
+      margin: 0;
+      transform: translate(0, 0);
+    }
+  }
+
   img {
     height: 100%;
     width: 100%;
