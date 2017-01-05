@@ -27,7 +27,8 @@ angular.module('productFrontendApp')
       $("#editModal").modal('show');
     }
 
-    $scope.showNewModal = function(product) {
+    $scope.showNewModal = function() {
+      $scope.newProduct = {};
       $("#newModal").modal('show');
     }
 
