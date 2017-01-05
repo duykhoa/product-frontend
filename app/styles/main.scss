@@ -198,3 +198,25 @@ body {
     color: #1daaa3;
   }
 }
+
+#new-product-wrapper {
+  position: fixed;
+  right: 1%;
+  bottom: 5%;
+
+  a {
+    padding: 20px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    font-size: 20px;
+    color: #fff;
+    background: rgba(35, 120, 125, 0.75);
+    transition: 0.3s all ease;
+
+    &:hover {
+      border: 2px solid #1daaa3;
+      color: #1daaa3;
+      background: rgba(35, 120, 125, 0.05);
+    }
+  }
+}

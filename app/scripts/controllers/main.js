@@ -26,4 +26,16 @@ angular.module('productFrontendApp')
       $scope.editProduct = product;
       $("#editModal").modal('show');
     }
+
+    $scope.showNewModal = function(product) {
+      $("#newModal").modal('show');
+    }
+
+    $scope.createProduct = function(product) {
+      ProductService.createProduct(product)
+      .then(function(resp) {
+        $("#newModal").modal('hide');
+        $scope.products.push(product);
+      })
+    }
   });

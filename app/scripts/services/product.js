@@ -23,6 +23,20 @@ angular.module('productFrontendApp')
 
        var services = Restangular.one("products", product.id);
        return services.customPUT(data);
+      },
+      createProduct: function(product) {
+        var data = {
+          product: {
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            product_images_attributes: [
+            ]
+          }
+        };
+
+       var services = Restangular.one("products", product.id);
+       return services.customPOST(data);
       }
     };
   });

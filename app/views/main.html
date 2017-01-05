@@ -48,6 +48,12 @@
   </div>
 </div>
 
+<div id="new-product-wrapper">
+  <a href="" id="new-product" data-toggle="modal" ng-click="showNewModal()">
+    <i class="glyphicon glyphicon-plus"></i>
+  </a>
+</div>
+
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -83,6 +89,47 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Product</h4>
+      </div>
+
+      <form ng-submit="createProduct(newProduct)">
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Name</label>
+                  <input type="text" ng-model="newProduct.name" class="form-control" value='{{newProduct.name}}'></input>
+                </div>
+
+                <div class="form-group">
+                  <label for="">Description</label>
+                  <textarea ng-model="newProduct.description" class="form-control">{{newProduct.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="">Price</label>
+                  <input type="value" ng-model="newProduct.price" class="form-control" value='{{newProduct.price}}'></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
