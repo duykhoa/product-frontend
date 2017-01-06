@@ -8,13 +8,14 @@
  * Controller of the productFrontendApp
  */
 angular.module('productFrontendApp')
-  .controller('MainCtrl', function ($scope, $timeout, Restangular, ProductService) {
+  .controller('MainCtrl', function ($scope, $timeout, Upload, Restangular, ProductService) {
     Restangular.all('products').getList()
     .then(function(products) {
       $scope.products = products;
     });
 
     $scope.submitProduct = function(product) {
+
       ProductService
         .updateProduct(product)
         .then(function(resp){
@@ -28,7 +29,7 @@ angular.module('productFrontendApp')
     }
 
     $scope.showNewModal = function() {
-      $scope.newProduct = {};
+      $scope.newProduct = { images: [] };
       $("#newModal").modal('show');
     }
 
@@ -68,5 +69,22 @@ angular.module('productFrontendApp')
 
           $("#deleteModal").modal('hide');
         })
+    }
+
+    $scope.uploadFiles = function(product, files) {
+      if (files && files.length > 0) {
+        for (var i = 0; i < files.length; i++) {
+          Upload.upload({
+            url: 'http://localhost:3000/images',
+            data: {
+              image: files[i]
+            }
+          })
+          .then(function(resp) {
+            $("#image-uploading").hide();
+            product.images.push(resp.data);
+          })
+        }
+      }
     }
   });

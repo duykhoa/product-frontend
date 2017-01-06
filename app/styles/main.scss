@@ -229,3 +229,18 @@ body {
     }
   }
 }
+
+.thumbnail-wrapper {
+  margin-top: 15px;
+}
+
+.thumbnail {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}

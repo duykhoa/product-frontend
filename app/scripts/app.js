@@ -16,7 +16,8 @@ angular
     'ui.router',
     'ngSanitize',
     'ngTouch',
-    'restangular'
+    'restangular',
+    'ngFileUpload'
   ])
   .config(function (
     $stateProvider,
