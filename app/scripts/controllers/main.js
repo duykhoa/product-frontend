@@ -72,6 +72,8 @@ angular.module('productFrontendApp')
     }
 
     $scope.uploadFiles = function(product, files) {
+      $('#upload-spiner').toggleClass('hidden');
+
       if (files && files.length > 0) {
         for (var i = 0; i < files.length; i++) {
           Upload.upload({
@@ -81,7 +83,7 @@ angular.module('productFrontendApp')
             }
           })
           .then(function(resp) {
-            $("#image-uploading").hide();
+            $('#upload-spiner').toggleClass('hidden');
             product.images.push(resp.data);
           })
         }

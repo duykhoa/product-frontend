@@ -36,6 +36,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "cors": "^2.8.1"
+    "cors": "^2.8.1",
+    "modernizr": "^3.3.1"
   }
 }
