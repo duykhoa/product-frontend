@@ -67,9 +67,9 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Name</label>
-                  <input type="text" ng-model="editProduct.name" class="form-control" value='{{editProduct.name}}'></input>
+                  <input type="text" ng-model="editProduct.name" class="form-control" value='{{editProduct.name}}' validation="between_len:3,255|required"></input>
                 </div>
 
                 <div class="form-group">
@@ -77,9 +77,9 @@
                   <textarea ng-model="editProduct.description" class="form-control">{{editProduct.description}}</textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Price</label>
-                  <input type="value" ng-model="editProduct.price" class="form-control" value='{{editProduct.price}}'></input>
+                  <input type="value" ng-model="editProduct.price" class="form-control" value='{{editProduct.price}}' validation="numeric|required"></input>
                 </div>
               </div>
             </div>
@@ -103,14 +103,14 @@
         <h4 class="modal-title" id="myModalLabel">New Product</h4>
       </div>
 
-      <form ng-submit="createProduct(newProduct)">
+      <form ng-submit="createProduct(newProduct)" name="newProductForm">
         <div class="modal-body">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Name</label>
-                  <input type="text" ng-model="newProduct.name" class="form-control" value='{{newProduct.name}}'></input>
+                  <input type="text" ng-model="newProduct.name" class="form-control" value='{{newProduct.name}}' validation="between_len:3,255|required"></input>
                 </div>
 
                 <div class="form-group">
@@ -118,9 +118,9 @@
                   <textarea ng-model="newProduct.description" class="form-control">{{newProduct.description}}</textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Price</label>
-                  <input type="text" ng-model="newProduct.price" class="form-control" value='{{newProduct.price}}'></input>
+                  <input type="text" name="price" validation="numeric|required" ng-model="newProduct.price" class="form-control" value='{{newProduct.price}}'></input>
                 </div>
 
                 <div class="form-group">
@@ -131,7 +131,7 @@
                     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
                   </span>
 
-                  <div class="thumbnail-wrapper">
+                  <div class="thumbnail-wrapper" ng-if="newProduct.images.length > 0">
                     <div class="thumbnail" ng-repeat="img in newProduct.images">
                       <img src="{{img.url}}"/>
                     </div>

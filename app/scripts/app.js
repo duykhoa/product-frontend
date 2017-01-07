@@ -17,12 +17,15 @@ angular
     'ngSanitize',
     'ngTouch',
     'restangular',
+    'ghiscoding.validation',
+    'pascalprecht.translate',
     'ngFileUpload'
   ])
   .config(function (
     $stateProvider,
     $urlRouterProvider,
-    RestangularProvider
+    RestangularProvider,
+    $translateProvider
   ) {
 
     $stateProvider
@@ -41,6 +44,14 @@ angular
 
     // Config Restangular
     RestangularProvider.setBaseUrl('http://localhost:3000/');
+
+    // Config TranslateProvider
+    $translateProvider.useStaticFilesLoader({
+      prefix: '/bower_components/angular-validation-ghiscoding/locales/validation/',
+      suffix: '.json'
+    });
+
+    $translateProvider.preferredLanguage('en');
   })
   .run(function () {
     console.log('run');
