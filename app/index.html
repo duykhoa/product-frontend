@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body ng-app="productFrontendApp">
     <!--[if lte IE 8]>
@@ -112,17 +113,139 @@
     </div>
 
     <div class="footer">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="logo text-center">
+              <h1>Product Frontend</h1>
+              <div class="social-media">
+                <a href="">
+                  <i class="fa fa-facebook"></i>
+                </a>
+
+                <a href="">
+                  <i class="fa fa-twitter"></i>
+                </a>
+
+                <a href="">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+
+                <a href="">
+                  <i class="fa fa-instagram"></i>
+                </a>
+
+                <a href="">
+                  <i class="fa fa-pinterest"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row complimentary">
+          <div class="col-md-2">
+            <div class="widget">
+              <h5>Our stores</h5>
+              <ul>
+                <li>Singapore</li>
+                <li>New York</li>
+                <li>London</li>
+                <li>Viet Nam</li>
+                <li>Chicago</li>
+                <li>Los Angeles</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="widget">
+              <h5>Information</h5>
+              <ul>
+                <li>About Store</li>
+                <li>New Collection</li>
+                <li>Contact us</li>
+                <li>Sitemaps</li>
+                <li>Latest product</li>
+                <li>Gift cards</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="widget">
+              <h5>Links</h5>
+              <ul>
+                <li>Privacy Policy</li>
+                <li>Return Policy</li>
+                <li>FAQs</li>
+                <li>Careers</li>
+                <li>Gift cards</li>
+                <li>New Press</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="widget">
+              <h5>Other things</h5>
+              <ul>
+                <li>Language Selection</li>
+                <li>Return Policy</li>
+                <li>Documentation</li>
+                <li>Raspberry Pi</li>
+                <li>Gift cards</li>
+                <li>Salesforce</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="widget">
+              <h5>About Product Frontend</h5>
+              <p> This is a simple application that consumes Product API. It's built with AngularJS and Yeoman.</p>
+
+              <div class="info">
+                <span>
+                  <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                  Block 13, Jalan Bukit Merah, Singapore, 150013.
+                </span>
+                <br>
+
+                <span>
+                  <i class="fa fa-mobile" aria-hidden="true"></i>
+                  +65 8434 6121
+                </span>
+              </div>
+
+              <div class="cards">
+                <label for="">We accepts:</label>
+
+                <div>
+                  <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                  <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                  <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+                  <i class="fa fa-btc" aria-hidden="true"></i>
+                  <i class="fa fa-credit-card" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+  (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+}(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -144,11 +267,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/product.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/product.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>

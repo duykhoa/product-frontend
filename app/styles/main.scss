@@ -285,3 +285,65 @@ body {
     -o-animation: rotating 2s linear infinite;
   }
 }
+
+.footer {
+  color: rgba(255, 255, 255, 0.6);
+  background: #000;
+}
+
+.social-media {
+  a {
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    padding: 5px;
+  }
+}
+
+.widget {
+  font-size: 15px;
+
+  h5 {
+    font-size: 20px;
+    position: relative;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+
+    &:after {
+      bottom: -10px;
+      left: 0;
+      width: 30px;
+      border-top: 2px solid #fff;
+      display: block;
+      position: absolute;
+      content: '';
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+
+    li {
+      padding: 0 0 14px 0;
+    }
+  }
+
+  .info {
+    i {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .cards {
+    margin-top: 20px;
+    i {
+      color: #fff;
+      display: inline-block;
+      padding: 0 10px 0 0;
+      font-size: 20px;
+    }
+  }
+}
+
