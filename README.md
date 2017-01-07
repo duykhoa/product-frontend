@@ -59,8 +59,7 @@ Simple frontend app, consume [Product API](https://github.com/duykhoa/product-ap
 
 # TODO
 
-1. Add validation when create/update product.
-- Allow user to remove images(s) of a product or upload new images when editing.
+1. Allow user to remove images(s) of a product or upload new images when editing.
 - Make website responsive
 - Accept images only
 - Token exchange and refresh
