@@ -62,14 +62,14 @@
         <h4 class="modal-title" id="myModalLabel">Edit Product {{editProduct.name}}</h4>
       </div>
 
-      <form ng-submit="submitProduct(editProduct)">
+      <form ng-submit="updateProduct(editProduct)" name="editform">
         <div class="modal-body">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Name</label>
-                  <input type="text" ng-model="editProduct.name" class="form-control" value='{{editProduct.name}}' validation="between_len:3,255|required"></input>
+                  <input type="text" ng-model="editProduct.name" class="form-control" value='{{editProduct.name}}' validation="between_len:3,255|required" name="name"></input>
                 </div>
 
                 <div class="form-group">
@@ -79,7 +79,7 @@
 
                 <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Price</label>
-                  <input type="value" ng-model="editProduct.price" class="form-control" value='{{editProduct.price}}' validation="numeric|required"></input>
+                  <input type="value" ng-model="editProduct.price" class="form-control" value='{{editProduct.price}}' validation="numeric|required" name="price"></input>
                 </div>
               </div>
             </div>
@@ -103,14 +103,14 @@
         <h4 class="modal-title" id="myModalLabel">New Product</h4>
       </div>
 
-      <form ng-submit="createProduct(newProduct)" name="newProductForm">
+      <form ng-submit="createProduct(newProduct)" name="newproductform">
         <div class="modal-body">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group" bootstrap-validation-decorator>
                   <label for="">Name</label>
-                  <input type="text" ng-model="newProduct.name" class="form-control" value='{{newProduct.name}}' validation="between_len:3,255|required"></input>
+                  <input type="text" ng-model="newProduct.name" class="form-control" value='{{newProduct.name}}' validation="between_len:3,255|required" name="name"></input>
                 </div>
 
                 <div class="form-group">

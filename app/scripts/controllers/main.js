@@ -8,19 +8,20 @@
  * Controller of the productFrontendApp
  */
 angular.module('productFrontendApp')
-  .controller('MainCtrl', function ($scope, $timeout, Upload, Restangular, ProductService) {
+  .controller('MainCtrl', function ($scope, $timeout, Upload, Restangular, ProductService, ValidationService) {
     Restangular.all('products').getList()
     .then(function(products) {
       $scope.products = products;
     });
 
-    $scope.submitProduct = function(product) {
-
-      ProductService
-        .updateProduct(product)
-        .then(function(resp){
-          $("#editModal").modal('hide');
-        })
+    $scope.updateProduct = function(product) {
+      if (new ValidationService().checkFormValidity($scope.editform)) {
+        ProductService
+          .updateProduct(product)
+          .then(function(resp){
+            $("#editModal").modal('hide');
+          })
+      }
     }
 
     $scope.showEditModal = function(product) {
@@ -34,11 +35,13 @@ angular.module('productFrontendApp')
     }
 
     $scope.createProduct = function(product) {
-      ProductService.createProduct(product)
-      .then(function(resp) {
-        $("#newModal").modal('hide');
-        $scope.products.push(product);
-      })
+      if (new ValidationService().checkFormValidity($scope.newproductform)) {
+        ProductService.createProduct(product)
+          .then(function(resp) {
+            $("#newModal").modal('hide');
+            $scope.products.push(product);
+          })
+      }
     }
 
     $scope.productInfo = function(product) {
@@ -82,10 +85,10 @@ angular.module('productFrontendApp')
               image: files[i]
             }
           })
-          .then(function(resp) {
-            $('#upload-spiner').toggleClass('hidden');
-            product.images.push(resp.data);
-          })
+            .then(function(resp) {
+              $('#upload-spiner').toggleClass('hidden');
+              product.images.push(resp.data);
+            })
         }
       }
     }
